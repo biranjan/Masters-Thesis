@@ -183,8 +183,8 @@
 % You can just fix the texts there. Just remember to check all the language
 % variants you use (they are all there in the same place). 
 % ------------------------------------------------------------------
-\newcommand{\TITLE}{Data Augmentation}
-\newcommand{\SUBTITLE}{A case Study}
+\newcommand{\TITLE}{Improving Object Classification Using Data Augmentation }
+\newcommand{\SUBTITLE}{A Case Study in Application of Data Augmentation}
 \newcommand{\DATE}{Jan 1 2018}
 
 % Supervisors and instructors
@@ -200,11 +200,11 @@
 %\newcommand{\SSUPERVISOR}{Professor Antti Ylä-Jääski}
 % Example of twosupervisors:
 \newcommand{\SUPERVISOR}{Professor Antti Ylä-Jääski\\
-  Professor Pekka Perustieteilijä}
+	Professor Pekka Perustieteilijä}
 \newcommand{\FSUPERVISOR}{Professori Antti Ylä-Jääski\\
-  Professori Pekka Perustieteilijä}
+	Professori Pekka Perustieteilijä}
 \newcommand{\SSUPERVISOR}{Professor Antti Ylä-Jääski\\
-  Professor Pekka Perustieteilijä}
+	Professor Pekka Perustieteilijä}
 
 % If you have only one instructor, just write one name here
 \newcommand{\INSTRUCTOR}{Olli Ohjaaja M.Sc. (Tech.)}
@@ -223,7 +223,7 @@
 % then the supervisor names shown here are printed in the cover page. Otherwise,
 % the supervisor names defined above are used.
 \newcommand{\COVERSUPERVISOR}{Professor Antti Ylä-Jääski, Aalto University\\
-  Professor Pekka Perustieteilijä, University of Helsinki}
+	Professor Pekka Perustieteilijä, University of Helsinki}
 
 % The same option is for the instructors, if you have multiple instructors.
 % \newcommand{\COVERINSTRUCTOR}{Olli Ohjaaja M.Sc. (Tech.), Aalto University\\
@@ -236,7 +236,7 @@
 % Professorship code is the same in all languages
 \newcommand{\PROFCODE}{T-110}
 \newcommand{\KEYWORDS}{ocean, sea, marine, ocean mammal, marine mammal, whales,
-cetaceans, dolphins, porpoises}
+	cetaceans, dolphins, porpoises}
 \newcommand{\LANGUAGE}{English}
 
 % Author is the same for all languages
@@ -278,10 +278,10 @@ cetaceans, dolphins, porpoises}
 % Bibliography style
 % acm style gives you a basic reference style. It works only with numbered
 % references.
-\bibliographystyle{acm}
+%\bibliographystyle{acm}
 % Plainnat is a plain style that works with both numbered and name citations.
-% \bibliographystyle{plainnat}
-
+\bibliographystyle{apa}
+\setcitestyle{authoryear,open={(},close={)}}
 
 % Extra hyphenation settings
 % ------------------------------------------------------------------
@@ -301,111 +301,113 @@ cetaceans, dolphins, porpoises}
 % Place all formatting commands and such before this line.
 % ------------------------------------------------------------------
 \begin{document}
-% This command adds a PDF bookmark to the cover page. You may leave
-% it out if you don't like it...
-\pdfbookmark[0]{Cover page}{bookmark.0.cover}
-% This command is defined in aalto-thesis.sty. It controls the page 
-% numbering based on whether the doublenumbering option is specified
-\startcoverpage
-
-% Cover page
-% ------------------------------------------------------------------
-% Options: finnish, english, and swedish
-% These control in which language the cover-page information is shown
-\coverpage{english}
-
-
-% Abstracts
-% ------------------------------------------------------------------
-% Include an abstract in the language that the thesis is written in,
-% and if your native language is Finnish or Swedish, one in that language.
-
-% Abstract in English
-% ------------------------------------------------------------------
-\thesisabstract{english}{
-A dissertation or thesis is a document submitted in support of candidature
-for a degree or professional qualification presenting the author's research and
-findings. In some countries/universities, the word thesis or a cognate is used
-as part of a bachelor's or master's course, while dissertation is normally
-applied to a doctorate, whilst, in others, the reverse is true.
-
-\fixme{Abstract text goes here (and this is an example how to use fixme).} 
-Fixme is a command that helps you identify parts of your thesis that still
-require some work. When compiled in the custom \texttt{mydraft} mode, text
-parts tagged with fixmes are shown in bold and with fixme tags around them. When
-compiled in normal mode, the fixme-tagged text is shown normally (without
-special formatting). The draft mode also causes the ``Draft'' text to appear on
-the front page, alongside with the document compilation date. The custom
-\texttt{mydraft} mode is selected by the \texttt{mydraft} option given for the
-package \texttt{aalto-thesis}, near the top of the \texttt{thesis-example.tex}
-file.
-
-The thesis example file (\texttt{thesis-example.tex}), all the chapter content
-files (\texttt{1introduction.tex} and so on), and the Aalto style file
-(\texttt{aalto-thesis.sty}) are commented with explanations on how the Aalto
-thesis works. The files also contain some examples on how to customize various
-details of the thesis layout, and of course the example text works as an
-example in itself. Please read the comments and the example text; that should
-get you well on your way!}
-
-
-\section{Introduction}
-\label{chapter:intro}
-
-This is my master's thesis, and I am very proud of it.  Of course,
-when I write my \emph{real} master's thesis, I will not use the
-singular pronoun \emph{I}, but rather try to avoid referring to myself
-and speak of the research \emph{we} have conducted---I rarely work
-alone, after all.  Yet, both \emph{I} and \emph{we} are correct, and
-it depends on the instructor and the supervisor (of course from you,
-too), which one they would prefer. Anyway, the tense should be active,
-and passive sentenses should be avoided (especially, writing sentences
-where the subject is presented with by preposition), so often you
-cannot avoid choosing between the pronouns. Life is strange, but there
-you have it.
-
-By the way, the preferred order of writing your master's thesis is
-about the same as the outline of the thesis: you first discover your
-problem and write about that, then you find out what methods you
-should use and write about that.  Then you do your implementation, and
-document that, and so on.  However, the abstract and introduction are
-often easiest to write last.  This is because these really cover the
-entire thesis, and there is no way you could know what to put in your
-abstract before you have actually done your implementation and
-evaluation. Rarely anyone write the thesis from the beginning to the
-end just one time, but the writing is more like process, where every
-piece of text is written at least twice. Be also prepared to delete
-your own text. In the first phase, you can hide it into comments that
-are started with \% but during the writing, the many comments should be
-visible for your helpers, the instructor and supervisor.
-
-The introduction in itself is rarely very long; two to five pages often
-suffice.
-
-
-\section{Problem statement}
-
-Undergraduate students studying technical subjects do not consider typography
-very interesting these days, and therefore the typographical quality of many
-theses is unacceptably low. 
-We plan to rectify this situation somewhat by providing a decent-quality
-example thesis outline for students.
-We expect that the typographical quality of the master's theses will
-dramatically increase as the new thesis outline is taken into use.
-
-\section{Helpful hints}
-
-Read the information from the university master's thesis
-pages~\cite{ThesisInstructions} before starting the thesis.  You
-should also go through the thesis grading
-instructions~\cite{ThesisGrading} together with your instructor and/or
-supervisor in the beginning of your work.
-
-\section{Structure of the Thesis}
-\label{section:structure} 
-
-You should use transition in your text, meaning that you should help
-the reader follow the thesis outline. Here, you tell what will be in
-each chapter of your thesis. 
+	% This command adds a PDF bookmark to the cover page. You may leave
+	% it out if you don't like it...
+	\pdfbookmark[0]{Cover page}{bookmark.0.cover}
+	% This command is defined in aalto-thesis.sty. It controls the page 
+	% numbering based on whether the doublenumbering option is specified
+	\startcoverpage
+	
+	% Cover page
+	% ------------------------------------------------------------------
+	% Options: finnish, english, and swedish
+	% These control in which language the cover-page information is shown
+	\coverpage{english}
+	
+	
+	% Abstracts
+	% ------------------------------------------------------------------
+	% Include an abstract in the language that the thesis is written in,
+	% and if your native language is Finnish or Swedish, one in that language.
+	
+	% Abstract in English
+	% ------------------------------------------------------------------
+	\thesisabstract{english}{
+		A dissertation or thesis is a document submitted in support of candidature
+		for a degree or professional qualification presenting the author's research and
+		findings. In some countries/universities, the word thesis or a cognate is used
+		as part of a bachelor's or master's course, while dissertation is normally
+		applied to a doctorate, whilst, in others, the reverse is true.
+		
+		\fixme{Abstract text goes here (and this is an example how to use fixme).} 
+		Fixme is a command that helps you identify parts of your thesis that still
+		require some work. When compiled in the custom \texttt{mydraft} mode, text
+		parts tagged with fixmes are shown in bold and with fixme tags around them. When
+		compiled in normal mode, the fixme-tagged text is shown normally (without
+		special formatting). The draft mode also causes the ``Draft'' text to appear on
+		the front page, alongside with the document compilation date. The custom
+		\texttt{mydraft} mode is selected by the \texttt{mydraft} option given for the
+		package \texttt{aalto-thesis}, near the top of the \texttt{thesis-example.tex}
+		file.
+		
+		The thesis example file (\texttt{thesis-example.tex}), all the chapter content
+		files (\texttt{1introduction.tex} and so on), and the Aalto style file
+		(\texttt{aalto-thesis.sty}) are commented with explanations on how the Aalto
+		thesis works. The files also contain some examples on how to customize various
+		details of the thesis layout, and of course the example text works as an
+		example in itself. Please read the comments and the example text; that should
+		get you well on your way!}
+	
+	
+	\section{Motivation}
+	\label{chapter:intro}
+	
+	In past decades deep-learning has garnered a lot of attention. Primarily due to its success at discovering complex structures in high-dimensional data. This has lead to the application of deep-learning to many domains of science, business, and government. Compared to conventional machine learning method deep-learning methods require little feature engineering, and it performs better with raw data in its natural form \citep{lecun2015deep}. Deep-learning methods are a set of representation learning methods that allows a machine to be fed with raw data and to automatically discover the representations needed for detection or classification \citep{lecun2015deep}. 
+	
+	
+	Improvement in the hardware, software, and availability of data has made the application of deep-learning possible in various tasks. Although advancement in algorithm along with hardware has resolved majority of bottlenecks in applications of deep-learning and made deep-learning accessible to everyone, deep-learning still requires a large number of annotated training samples for better performance. One way to increase the annotated training samples is by collecting more unstructured data and building a manual or automated system of data annotations. However, this method can be expensive, error-prone (if manually sorted) and in some domains simply impossible due to a limited source of data. Another way to overcome this problem is by artificially generating more training samples from existing data. This process of creating artificial data from existing data is also known as Data Augmentation. Data augmentation has potential to increase the accuracy of the existing deep-learning models and at the same time reduce the overall cost associated with data acquisition and manipulation. It also can create an entirely novel application of deep-learning in a domain where it was previously impossible to apply deep-learning due to a limited number of data. Therefore, this thesis will explore existing data augmentation techniques to increase the training samples.
+	
+	The primary motivation for taking on this contemporary problem in the field of deep-learning comes from a challenge faced by a case-company. The case-company operates in a heavily regulated industry where access to data is very limited and thus requires an alternative way to increase annotated training samples in order to improve its existing object classification model. As discussed above, access to reliable data can be a significant limiting factor in application of deep-learning for companies across various industries. Therefore, by exploring the effectiveness of available data augmentation to improve deep-learning model, this thesis not only tries to solve the problem faced by the case company but also provides a platform for further research in application of data augmentation in various other domains. 
+	
+	
+	\section{Problem statement}
+	
+	This research will primarily try to address the problem of case company where due to regulatory reasons it is not feasible to collect enough training samples to train deep-learning models. Thus, data augmentation will be explored as a possible solution. As such, the main research question will be:
+	
+	How to apply existing data augmentation methods to increase the classification accuracy of the deep-learning classifier with limited training samples?
+	
+	\section{Earlier Research}
+	
+	Data augmentation has been applied in deep-learning with varying degrees of success. The most prominent application of data augmentation has been in image classification, and it has proven to be a successful technique to improve the accuracy of a model \citep{krizhevsky2012imagenet}. One of the widely used and accepted practices for augmenting image data is to perform geometric and color augmentations, such as reflecting an image, cropping and translating the image, and changing the color palette of the image. By applying various transformation to one image multiple images are generated with different perspective or colors and these images can be used as new training samples. This approach of data augmenting is also known as data warping. Data warping was quite successful in augmenting hand written character in MNIST handwritten digit database. The augmented data was then used to balance the amount of training examples for each character class in order to reduce the bias in classifier which favored frequently presented training examples \citep{wong2016understanding}.
+	
+	Synthetic Minority Over-Sampling Technique (SMOTE) is another data augmentation technique which was inspired by data warping, particularly its ability to reduce the class imbalance in the handwritten digit problem. SMOTE has been used particularly to address the problem of class imbalance, where real-world datasets often only contain a small percentage of “interesting” or target class examples \citep{chawla2002smote}. SMOTE algorithm works by creating synthetic samples from the minor class instead of over-sampling with replacement. The advantage of synthetic over-sampling compared to data warping is that synthetic examples are generated in feature-space, and thus the SMOTE algorithm is more application-independent. 
+	
+	One of the promising technique of data augmentation is Generative Adversarial Nets (GANs). GANs uses a min-max strategy where one neural net successively generates counterfeit samples from the original data distribution in order to fool the other net, and the other net is then trained to better distinguish the counterfeits \citep{goodfellow2014generative}. There are two main components of a GAN: Generator and Discriminator. The role of generator network is to take a random input and generate a sample data, whereas the role of discriminator is to take input from the real data or from generator and to predict whether the input is real or generated. Discriminator aims to maximize the probability of assigning the correct label to both original sample and the counterfeit, whereas generator simultaneously aims to minimize the difference between original and counterfeit samples. In this sense, the discriminator and generator play a two-player minimax game. GANs have been effective even with relatively small sets of data. GANs have been used for example to train a self-driving car to drive in the night or in the rain using only data collected on a sunny day \citep{gurumurthy2017deligan}. 
+	
+	
+	\section{Aim of the Study}
+	
+	Although data augmentation techniques are not new in the field of deep-learning, some of the techniques are domain-specific and others still at experimental phase with varying degree of success. For example, technique of data-warping is not grounded in a sound theoretical background and thus produces inconsistent result across different types of applications. Similarly, GANs is fairly new technique and it is difficult to translate its theoretical framework into real application.
+	
+	Therefore, this thesis has a two-fold objective. The primary objective will be to use data augmentation to improve the accuracy of existing object classification model. To do so, various contemporary data augmentation techniques will be explored. The Secondary objective of the thesis is to bridge the gap between existing data augmentation literature and its applications. In this way, the thesis can also provide an avenue for further research in exploration and implementation of data augmentation to solve the problem posed by limited training data. 
+	
+	\section{Research Methodology}
+	
+	This research will closely follow Cross Industry Standard Process for Data Mining (CRISP-DM). CRISP-DM is a tried and tested method for data mining that builds upon the previous attempts to define knowledge discovery methodologies \citep{wirth2000crisp}. It is an iterative process that begins with business understanding and moves on to data understanding, data preparation, modeling, evaluation and finally deployment. The figure:1 graphically summarized the entire CRISP-DM process. Thesis will primarily focus on the empirical part of modeling and evaluation, where classification model generated using various augmentation methods will be evaluated against the existing base model. 
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[width=9cm]{images/crisp.png}
+			\caption{CRISP-DM Process}
+			\label{fig:CRISP-DM}
+		\end{center}
+	\end{figure}
+	
+	\section{Structure of the Thesis}
+	\label{section:structure} 
+	The thesis will start by establishing a motivation and explaining the key objectives of the research, as well as explaining the research problem in Introduction part. Then thesis will review the existing literature in the Data Augmentation. From there on thesis will provide a brief overview of data and steps involved in data processing. In-depth analysis of data augmentation and evaluation will be provided in Modeling and Evaluation section. Finally, in conclusion section, the main findings, limitation, and recommendations will be discussed. 
+	
+	\section{Thesis Time Line}
+	\label{section:Time Line} 
+	The thesis will follow approximately the following time line.
+	
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[width=9cm]{images/time.png}
+			\caption{Thesis Time Line}
+			\label{fig:Time Line}
+		\end{center}
+	\end{figure}
+	
+	\bibliography{sources}
 \end{document}
 \grid

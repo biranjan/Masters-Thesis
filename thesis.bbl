@@ -1,0 +1,45 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Chawla et~al.}{2002}]{chawla2002smote}
+Chawla, N.~V., Bowyer, K.~W., Hall, L.~O., and Kegelmeyer, W.~P. (2002).
+\newblock Smote: synthetic minority over-sampling technique.
+\newblock {\em Journal of artificial intelligence research}, 16:321--357.
+
+\bibitem[\protect\astroncite{Goodfellow
+  et~al.}{2014}]{goodfellow2014generative}
+Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair,
+  S., Courville, A., and Bengio, Y. (2014).
+\newblock Generative adversarial nets.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2672--2680.
+
+\bibitem[\protect\astroncite{Gurumurthy et~al.}{2017}]{gurumurthy2017deligan}
+Gurumurthy, S., Sarvadevabhatla, R.~K., and Radhakrishnan, V.~B. (2017).
+\newblock Deligan: Generative adversarial networks for diverse and limited
+  data.
+\newblock {\em arXiv preprint arXiv:1706.02071}.
+
+\bibitem[\protect\astroncite{Krizhevsky et~al.}{2012}]{krizhevsky2012imagenet}
+Krizhevsky, A., Sutskever, I., and Hinton, G.~E. (2012).
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105.
+
+\bibitem[\protect\astroncite{LeCun et~al.}{2015}]{lecun2015deep}
+LeCun, Y., Bengio, Y., and Hinton, G. (2015).
+\newblock Deep learning.
+\newblock {\em Nature}, 521(7553):436--444.
+
+\bibitem[\protect\astroncite{Wirth and Hipp}{2000}]{wirth2000crisp}
+Wirth, R. and Hipp, J. (2000).
+\newblock Crisp-dm: Towards a standard process model for data mining.
+\newblock In {\em Proceedings of the 4th international conference on the
+  practical applications of knowledge discovery and data mining}, pages 29--39.
+
+\bibitem[\protect\astroncite{Wong et~al.}{2016}]{wong2016understanding}
+Wong, S.~C., Gatt, A., Stamatescu, V., and McDonnell, M.~D. (2016).
+\newblock Understanding data augmentation for classification: when to warp?
+\newblock In {\em Digital Image Computing: Techniques and Applications (DICTA),
+  2016 International Conference on}, pages 1--6. IEEE.
+
+\end{thebibliography}
