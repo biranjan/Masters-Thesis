@@ -1,0 +1,40 @@
+\chapter{Discussion}
+\label{chapter:discussion}
+
+We have built and compared various data augmentation strategies using deep learning models. Although thesis has followed best practices and generally accepted conventions from designing the deep learning model to formal data research methods like CRISP-DM, there are inevitably some limitations. Furthermore, this thesis with its limited scope and time could not go through all the possible augmentation techniques.   This chapter discusses the possible shortcomings of the thesis and how this study can be extended in the future.
+
+
+\section{Limitations}
+
+One of the critical assumptions in augmentation is that the augmentation process retains the label. This means that if the spectral data from the particular material is augmented then the augmented data still represents the same material even though it is slightly different from the original spectral data. This assumption mostly holds true for image augmentation as an image of blurred or rotated cat image is nevertheless a cat image. However, for spectral data, it is not apparent at what point changing the data also changes the underlying representation of its label. Therefore there is no straight way to intuitively check whether augmentation preserves the essential characteristics of spectral data.
+
+Similarly, at the implementation phase, we realized that due to the way the augmentation method is implemented and also due to the assumption of label invariance, we were unable to use augmentation for a problem other than classification problem. Thus we are unable to use data augmentation for one of the prominent areas of NIRs application which is detecting concentration level of particular raw material in a compound. Augmentation methods discussed here only support the class data, and also assuming that augmentation will preserve the label for a particular point instead of a class will be a very broad assumption.
+
+Furthermore, this study should not be taken as definitive proof that augmentation techniques discussed here will always perform better than the model without augmentation. For instance, if there is plenty of available data, further augmentation might not result in better performance. In addition, augmentation can be domain specific, so the type of augmentation that works in one domain might not necessarily work in other cases. 
+
+Lastly, the evaluation metrics exclusively evaluated models based on the classification result on the test set. This approach has some limitations. Due to several iterations, even though the test was untouched during the training period, the model might have been slightly biased. Similarly, in real life application, just the accuracy on the test might not be sufficient to evaluate the models. Factors such as model complexity and time taken to train the model needs to be considered too.
+
+
+\section{Future work}
+
+The future work could focus on extending the current work by tackling above mentioned limitations and also experimenting with more augmentation techniques that were not part of this study. 
+
+There are other various augmentation techniques that this research could not cover due to limited time and scope. For example, there are other promising generative models which were not tested in this research like variational autoencoder and other different variations of GANs itself. These generative models could provide a further improvement over the existing model. Similarly, there are also different variations of SMOTE which could be evaluated against generative models. We can also create new augmented data by combining existing augmentation methods and creating entirely new augmentation scheme.
+
+We could extend the present model to solve regression problem by redefining the regression problem as a classification problem where possible. For instance, regression problem can be reformatted by binning the points and classifying the data in bins. This approach could broaden the application of data augmentation in NIRs. 
+
+
+All in all, like every study, this study too has its own limitations. This opens up new avenues for future work that could improve and extend this study. Data augmentation offers a big opportunity and there are growing works done in this field. It is unlikely that we can find one augmentation approach that works in all the cases, and therefore several augmentation approaches need to be tested in order to come up with the augmentation approach that fits individual need. 
+
+
+
+
+
+
+
+
+
+
+
+ 
+

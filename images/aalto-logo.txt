@@ -8,15 +8,15 @@ Instructions:
 
 - Kieli: Select the correct language
 
-- Yksikkö: Select "Perustieteiden korkeakoulu"
+- Yksikkï¿½: Select "Perustieteiden korkeakoulu"
 
 - Tunnuksen kokoversio: Select "Pieni versio (13)"
 
-- Käyttö: Select "Paino"
+- Kï¿½yttï¿½: Select "Paino"
 
-- Väriarvot: 
-  - Select "CMYK, päällystetylle paperille" if you use coated paper
-  - Select "CMYK, päällystämättömälle paperille" if you use uncoated paper
+- Vï¿½riarvot: 
+  - Select "CMYK, pï¿½ï¿½llystetylle paperille" if you use coated paper
+  - Select "CMYK, pï¿½ï¿½llystï¿½mï¿½ttï¿½mï¿½lle paperille" if you use uncoated paper
   - Always select "Black" if you print this page in black and white
     (you can render another version of your thesis with coloured logos for
      electronic printing, but please use the black and white PDF when 

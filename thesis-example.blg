@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis-example.aux
+The style file: apa.bst
+Database file #1: sources.bib
+Warning--empty journal in chapman2000crisp
+You've used 21 entries,
+            1940 wiz_defined-function locations,
+            599 strings with 8084 characters,
+and the built_in function-call counts, 9539 in all, are:
+= -- 908
+> -- 511
+< -- 10
++ -- 184
+- -- 180
+* -- 871
+:= -- 1656
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 193
+chr.to.int$ -- 21
+cite$ -- 22
+duplicate$ -- 334
+empty$ -- 582
+format.name$ -- 208
+if$ -- 1830
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 108
+num.names$ -- 63
+pop$ -- 183
+preamble$ -- 1
+purify$ -- 194
+quote$ -- 0
+skip$ -- 257
+stack$ -- 0
+substring$ -- 572
+swap$ -- 75
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 124
+warning$ -- 1
+while$ -- 72
+width$ -- 0
+write$ -- 269
+(There was 1 warning)

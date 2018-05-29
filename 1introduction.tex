@@ -1,0 +1,71 @@
+
+\chapter{Introduction}
+
+\section{Motivation}
+
+\label{chapter:intro}
+In past decades deep learning has garnered plenty of attention, primarily due to its success at discovering complex structures in high-dimensional data. The success of deep learning has lead to the application of deep learning to many domains of science, business, and government. Compared to conventional machine learning methods, deep learning methods require little feature engineering, and it performs better with raw data in its natural form \citep{lecun2015deep}. Deep-learning methods are a set of representation learning methods that allows a machine to be fed with raw data and to discover the representations needed for detection or classification \citep{lecun2015deep}.
+
+Improvement in the hardware, software, and availability of data has made the application of deep learning possible in various tasks. Although advancement in algorithms along with hardware has resolved the majority of bottlenecks in applications of deep learning and made it accessible to everyone, deep learning still requires a large number of annotated training samples for better performance. One way to increase the annotated training samples is by collecting more unstructured data and building a manual or automated system of data annotations. However, this method can be expensive, error-prone (if manually sorted) and in some domains simply impossible due to a limited source of data. Another way to overcome this problem is by artificially generating more training samples from existing data. This process of creating artificial data from existing data is also known as Data Augmentation. Data augmentation has potential to increase the accuracy of the existing deep learning models and at the same time reduce the overall cost associated with data acquisition and manipulation. It also can create an entirely novel application of deep learning in a domain where it was previously impossible to apply deep learning due to a limited number of data. Therefore, this thesis will explore existing data augmentation techniques to improve deep learning model by artificially generating the training samples.
+
+The primary motivation for taking on this contemporary problem in the field of deep learning comes from a challenge faced by a case company. Case company produces portable material sensors based on Near Infrared (NIR) spectroscopy. NIR spectrometers are widely used in various industries to measure material content, such as moisture, fat, protein, hydrocarbons, textiles, polymers and pharmaceutical ingredients. Portable material sensors designed by the company can capture the unique properties of chemical components inside the organic material. These unique properties act as optical fingerprints of chemical components. The optical fingerprint obtained from spectrometer can be used to identify various materials. To correctly identify the material, spectrometer relies on a deep learning model which has been trained on thousands of annotated samples. The annotated samples are obtained in a laboratory setting which is both time and labor-intensive process as deep learning model requires thousands of samples to produce a reliable and consistent model. Similarly, certain materials such as pharmaceutical ingredients are difficult to obtain due to regulatory reasons. For such materials, a wide range of samples cannot be collected which adversely affects the performance of deep learning model. Availability of annotated training samples is a significant limiting factor in application of deep learning for a case company. Data augmentation has potential to streamline the process of data acquisition. In addition, this could lead to new business opportunities which would not have been possible due to limited availability of annotated samples.   
+
+Therefore, by exploring the effectiveness of available data augmentation techniques for improving deep learning model, this thesis not only tries to solve the problem faced by the case company but also provides a platform for further research in the application of data augmentation in various other domains.
+
+
+\section{Research Problem}
+
+This thesis will mainly try to address the specific case where the company cannot collect enough samples due to regulatory reasons. Thus, Data augmentation will be explored as a possible solution to come up with a robust deep learning model. The primary research question will be:
+
+How to apply existing data augmentation methods to increase the classification accuracy of a deep learning model that classifies the organic materials using limited training data obtained from the Near-Infrared spectrometer?
+
+\section{Aim of the Study}
+
+Although data augmentation techniques are not new in the field of deep learning, some of the techniques are domain-specific and others still at experimental phase with varying degree of success. For example, the technique of data-warping is not grounded in a sound theoretical background and thus produces inconsistent result across different types of applications. Similarly, GANs is a relatively new technique, and it is difficult to translate its theoretical framework into a real application.
+
+Consequently, this thesis has a two-fold objective. The primary objective will be to use data augmentation to improve the accuracy of existing object classification model. To achieve the primary goal, various contemporary data augmentation techniques will be explored. The secondary objective of the thesis is to bridge the gap between existing data augmentation literature and its applications. In this way, the thesis can also provide an avenue for further research, especially in exploration and implementation of data augmentation to solve the problem posed by the limited availability of training data. 
+
+\section{Structure of the Thesis}
+\label{section:structure} 
+The thesis starts off by laying out the motivation for research. Then it provides an overview of relevant literature review in Chapter 2. In Chapter 3, a brief overview of the process of conducting a machine learning project is described. In Chapter 4, the process described in Chapter 3 is implemented. In Chapter 5, models obtained from data mining process is evaluated using the framework discussed in literature review. Chapters 6 and 7 are concluding chapters where the insight gained from the constructing and evaluating deep learning models using various data augmentation techniques is discussed and concluded by laying out the limitations, future work, and contributions of this paper.       
+
+\begin{table}[ht]
+	\centering
+	\caption{Thesis structure}
+	\label{table:Structure}
+	\begin{tabular}{p{7cm} }
+		\\
+		\cellcolor{gray!25} Chapter 1: Introduction\\
+		\\
+		\cellcolor{gray!25} Chapter 2: Literature review\\
+		- Machine Learning\\
+		- Deep Learning\\
+		- Data Augmentation \\
+		- Model Evaluation \\
+		
+		\cellcolor{gray!25} Chapter 3: Methods\\
+		- Crisp DM process\\
+		
+		\cellcolor{gray!25} Chapter 4: Implementation\\
+		- Business understanding\\
+		- Data understanding\\				
+		- Data preparation\\
+		- Data modeling\\
+		
+		\cellcolor{gray!25} Chapter 5: Evaluation\\
+		- Base Model\\
+		- Augmentation using data warping\\
+		- Augmentation using SMOTE\\
+		- Augmentation using GANs\\				
+		
+		\cellcolor{gray!25}	Chapter 6: Discussion\\
+		- Limitation\\	
+		- Future work\\
+		
+		\cellcolor{gray!25}	Chapter 7: Conclusion\\
+		- Research Finding
+	\end{tabular}
+\end{table}
+
+
+

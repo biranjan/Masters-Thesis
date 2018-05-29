@@ -1,0 +1,185 @@
+\chapter{Evaluation}
+\label{chapter:evaluation}
+In this section, we will dissect the various models built in modeling phase using the evaluation framework established in the literature review. Data were partitioned approximately fifty-fifty into training and testing set. The training set was used both to train the model and also to generate augmented data. Finally, the test set was used to evaluate the model. As discussed in literature review, F1-score is chosen as the primary measuring rod for the model performance and benchmarking.
+
+
+\section{Base model without augmentation} 
+
+The first model was built using training data without augmentation. This model primarily serves as a benchmark model against which various other models with augmentation will be compared. Table~\ref{table:model1_result} below summarizes the result from the first model without using any augmented data. 
+
+%``that is''
+
+\begin{table}[ht]
+	\centering
+	\caption{Evaluation metrics of first model without augmentation}
+	% Place the label just after the caption to make the link work
+	\label{table:model1_result}
+	\begin{tabular}{|p{2cm}|p{2cm}|} 
+		% Alignment of sells: l=left, c=center, r=right. 
+		% If you want wrapping lines, use p{width} exact cell widths.
+		% If you want vertical lines between columns, write | above between the letters
+		% Horizontal lines are generated with the \hline command:
+		\hline % The line on top of the table
+		\textbf{Metrics} & \textbf{Value}\\ 
+		\hline
+		\textbf{Accuracy} & 0.97  \\ 
+		\textbf{Precision} & 0.69  \\ 
+ 
+		% Place a & between the columns
+		% In the end of the line, use two backslashes \\ to break the line,
+		% then place a \hline to make a horizontal line below the row 
+		\textbf{Recall} & 0.59 \\ 
+		\textbf{\textbf{$F_1-score$}} & 0.63 \\ 
+		
+		\hline		
+	\end{tabular} % for really simple tables, you can just use tabular
+	% You can place the caption either below (like here) or above the table
+	
+\end{table} % table makes a floating object with a title
+
+The overall accuracy of the first model is 0.96, and the F1-score which is the harmonic mean of macro-precision and macro-recall is 0.63. Since this is a multi-class classification with highly imbalanced data, accuracy alone does not provide the full picture. As we can see, the accuracy of the model is relatively high. However, the model does not correctly classify minority labels reflected by low F1-score. 
+
+\section{Augmentation using data warping}  
+
+The second model is built using the same network but with augmentation. In this case, we have used a simple data warping technique defined in the implementation section. It has the same number of epochs and batch size. In this model trained data is balanced using augmentation. Through augmentation, generated data is more than ten times the original data. Table~\ref{table:model2_result} summarizes the results obtained from the model.
+
+\begin{table}[ht]
+	\centering
+	\caption{Evaluation metrics of second model with augmentation}
+	% Place the label just after the caption to make the link work
+	\label{table:model2_result}
+	\begin{tabular}{|p{2cm}|p{2cm}|} 
+		% Alignment of sells: l=left, c=center, r=right. 
+		% If you want wrapping lines, use p{width} exact cell widths.
+		% If you want vertical lines between columns, write | above between the letters
+		% Horizontal lines are generated with the \hline command:
+		\hline
+		\textbf{Measures} & \textbf{Value}\\ 
+		\hline % The line on top of the table
+		\textbf{Accuracy} & 0.95  \\ 
+		\textbf{Precision} & 0.76  \\ 
+		
+		% Place a & between the columns
+		% In the end of the line, use two backslashes \\ to break the line,
+		% then place a \hline to make a horizontal line below the row 
+		\textbf{recall} & 0.88 \\ 
+		
+		\textbf{\textbf{$F_1-score$}} & 0.77 \\ 
+		
+		\hline		
+	\end{tabular} % for really simple tables, you can just use tabular
+	% You can place the caption either below (like here) or above the table
+	
+\end{table} % table makes a floating object with a title
+ 
+Augmentation using data warping shows some immediate improvement over F1-score as it climbs up to 0.77 with the considerable increase in both precision and recall. However, this model increases F1-score at the expense of some misclassification in majority class reflected by a decrease in accuracy.   
+
+\section{Augmentation using SMOTE}  
+The third model is built using the same network using SMOTE as augmentation method. SMOTE has been thoroughly discussed in the literature review and as mentioned previously, SMOTE was implemented here using the python's third-party module named 'imblean'. It also has the same number of epochs with same batch size. Here augmented data is more than 10-times the actual data and augmented data is used to balance training sets labels.
+Table~\ref{table:model3_result} summarizes the results obtained from the model.
+
+\begin{table}[ht]
+	\centering
+	\caption{Evaluation metrics of third model with augmentation}
+	% Place the label just after the caption to make the link work
+	\label{table:model3_result}
+	\begin{tabular}{|p{2cm}|p{2cm}|} 
+		% Alignment of sells: l=left, c=center, r=right. 
+		% If you want wrapping lines, use p{width} exact cell widths.
+		% If you want vertical lines between columns, write | above between the letters
+		% Horizontal lines are generated with the \hline command:
+		\hline
+		\textbf{Measures} & \textbf{Value}\\ 
+		\hline % The line on top of the table
+		\textbf{Accuracy} & 0.98  \\ 
+		\textbf{Precision} & 0.84  \\ 
+		
+		% Place a & between the columns
+		% In the end of the line, use two backslashes \\ to break the line,
+		% then place a \hline to make a horizontal line below the row 
+		\textbf{recall} & 0.81 \\ 
+		
+		\textbf{\textbf{$F_1-score$}} & 0.80 \\ 
+		
+		\hline		
+	\end{tabular} % for really simple tables, you can just use tabular
+	% You can place the caption either below (like here) or above the table
+	
+\end{table} % table makes a floating object with a title
+
+Augmentation using data warping also shows improvement over base model as F1-score reaches 0.80. This model significantly improved the classification performance of both minority and majority class compared to the previous models. The improvement in performance is evident by the increase in both F1-score and accuracy. 
+
+\section{Augmentation using GANs}  
+The fourth and final model is built using the augmented data from GANs network. We have created a generator for each class except the majority class. Using the generator for each class, approximately thirty thousand new samples of minority classes were created. The classification model uses the same network with the same number of epochs and batch size as previous models. Table~\ref{table:model4_result} summarizes the results obtained from the model.
+
+\begin{table}[ht]
+	\centering
+	\caption{Evaluation metrics of fourth model with augmentation}
+	% Place the label just after the caption to make the link work
+	\label{table:model4_result}
+	\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|} 
+		% Alignment of sells: l=left, c=center, r=right. 
+		% If you want wrapping lines, use p{width} exact cell widths.
+		% If you want vertical lines between columns, write | above between the letters
+		% Horizontal lines are generated with the \hline command:
+		\hline
+		\textbf{Measures} & \textbf{Value}\\ 
+		\hline % The line on top of the table
+		\textbf{Accuracy} & 0.99  \\ 
+		\textbf{Precision} & 0.92  \\ 
+		
+		% Place a & between the columns
+		% In the end of the line, use two backslashes \\ to break the line,
+		% then place a \hline to make a horizontal line below the row 
+		\textbf{recall} & 0.89 \\ 
+		
+		\textbf{\textbf{$F_1-score$}} & 0.91 \\ 
+		
+		\hline		
+	\end{tabular} % for really simple tables, you can just use tabular
+	% You can place the caption either below (like here) or above the table
+	
+\end{table} % table makes a floating object with a title
+
+Augmentation using data generated from GANs also shows improvement over base model as F1-score reaches 0.91, with a considerable increase in both precision and recall.
+
+\section{Model Comparison}
+
+From the evaluation of the model, we can infer that classification models performed much better when using augmented data. There was a significant improvement over the base model without using augmentation when compared to a model created through augmented data. Relative increase in accuracy of the model with and without augmentation is not significant. However, if we observe precision, recall and F1-score there seem to be a considerable improvement. This improvement in F1-score improves the quality of prediction reducing the misclassification rate of an infrequent nevertheless important minority class. 
+
+Augmentation using data warping was an improvement over base model even though overall accuracy declined by three percentage points. There is an improvement of more than 10 points in F1 score compared to the base model. An apparent increase in F1 score and a small decline in accuracy means that the model built using data warping as augmentation strategy is better able to detect minority classes than the base model but at the cost of some misclassification of majority class.
+
+\begin{table}[ht]
+	\centering
+	\caption{Model comparison based on F1-score}
+	% Place the label just after the caption to make the link work
+	\label{table:Model comparison}
+	\begin{tabular}{|p{4cm}|p{2cm}|} 
+		% Alignment of sells: l=left, c=center, r=right. 
+		% If you want wrapping lines, use p{width} exact cell widths.
+		% If you want vertical lines between columns, write | above between the letters
+		% Horizontal lines are generated with the \hline command:
+		\hline % The line on top of the table
+		\textbf{Models} & \textbf{F1-score}\\ 
+		\hline
+		\textbf{Base model} & 0.63  \\ 
+		\textbf{Data warping} & 0.77  \\ 
+		\rowcolor{gray!15}\textbf{GANs} & 0.91 \\ 
+		% Place a & between the columns
+		% In the end of the line, use two backslashes \\ to break the line,
+		% then place a \hline to make a horizontal line below the row 
+		\textbf{SMOTE} & 0.80 \\ 
+		
+		
+		\hline		
+	\end{tabular} % for really simple tables, you can just use tabular
+	% You can place the caption either below (like here) or above the table
+	
+\end{table} % table makes a floating object with a title
+
+Classification model built using SMOTE technique seems to outperform both the base model and the model with data warping augmentation. With SMOTE we can see improvement in accuracy as well as in F1-score. Unlike data augmentation using warping, the model built using SMOTE does equally well in classifying both majority and minority class. Overall accuracy is quite high, however there is still space for improvement in classifying minority class as the F1-score is relatively low compared to accuracy. 
+
+The fourth model built using augmented data from GANs generator performed better than all the previous models. There is an improvement in both accuracy and the F1-score compared to all the previous models. There is a quite significant improvement over the base model reflected by an increase of 30 points in F1-score. Although GANs provide a significant improvement over the base model, we can still see that there is room for some more improvement in the F1 score. 
+
+To conclude, model with augmentation provide significant improvement in material classification. Using F1-score as the measure we can rank the performance of GANs model as first, SMOTE as second and data warping as third respectively. Among all the models GANs had a significant improvement in the model as it improved performance on detecting majority and minority classes. 
+
