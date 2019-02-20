@@ -1,4 +1,4 @@
-MAIN= thesis-example
+MAIN= thesis
 LATEX= pdflatex
 BIBTEX= bibtex
 
