@@ -28,7 +28,7 @@
 \chapter{Augmentation using data warping}
 \label{chapter:first-appendix}
 \lstset{language=Python, caption=Function to create data warping, label=Simple data warping}
-\begin{lstlisting}
+\begin{lstlisting}[backgroundcolor = \color{white}]
 def augmenting_f(X):
 	"""Augment data by adding random slope background"""
 	total_samples = X.shape[0]
@@ -49,7 +49,7 @@ def augmenting_f(X):
 \chapter{Augmentation using SMOTE}
 \label{chapter:second-appendix}
 \lstset{language=Python, caption=Implimentation of SMOTE, label=Simple data augmentation}
-\begin{lstlisting}
+\begin{lstlisting}[backgroundcolor = \color{white}]
 
 from imblearn.over_sampling import SMOTE, ADASYN
 
@@ -57,12 +57,23 @@ augmented_x, augmented_y = SMOTE(random_state=123).fit_sample(origina_x, origina
 
 \end{lstlisting}
 
+\chapter{Neural network}
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/neural_overview.png}
+		\caption{Detail overview of the network}
+		\label{fig:neural network architecture}
+		
+	\end{center}
+\end{figure}
+
+
 \chapter{Augmentation using GANs}
 \label{chapter:third-appendix}
 \lstset{language=Python, caption=Implimentation of GANs,label=GAN}
 
 
-\begin{lstlisting}
+\begin{lstlisting}[backgroundcolor = \color{white}]
 
 class GAN():
 	def __init__(self,train_data,rand_dim,dense_unit,batch_size,

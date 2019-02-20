@@ -10,7 +10,7 @@ NIRs has been widely used in various food commodities especially in the grain, c
 
 One of the major hindrances for the application of NIRs has been the size and cost. Conventional spectrometers are relatively big and are also costly. However, the spectrometers produced by the case company are portable and economical. As discussed above, portability adds some complexities, however the advantages over-weight the drawbacks. The portability offers a novel application of NIRs solution in various mass markets, not just limited to traditional agricultural and pharmaceutical industries. 
 
-Overall innovative NIRs solution offered by the case company has significant potential and offers quite many advantages over a traditional sensor. Despite its advantage, there are also several challenges. Traditionally the measurement with the spectrometer is carried out in a controlled environment in a laboratory setting where the environmental variables such as temperature, lights and moisture level can be controlled, enabling consistent measurements. Due to the portable nature of the product, above mentioned environmental variables cannot be controlled. The fluctuation in environmental variables introduces fluctuation in a measurement. The fluctuation of measurement means that the classifier needs to be trained in a diverse sample of data, mimicking the actual use condition. Similarly, samples in the real world come from various sources with a various level of concentration. At present companies try to capture all the environmental as well as sample variation in a laboratory to produce training samples. However, there are several variations, and this takes a considerable amount of time to produce data to train a deep learning model. Similarly, due to regulatory restriction pharmaceutical materials are not readily available, restricting the pool of available samples to train a deep learning model to identify the pharmaceutical material. Furthermore, due to the nature of the manufacturing process, no two scanners are the same. So this means there will be slight variation in a measurement of the same sample from two different scanners. Therefore there is a need for robust model that can take various factors in consideration and correctly classify materials. 
+Overall innovative NIRs solution offered by the case company has significant potential and offers quite many advantages over a traditional sensor. Despite its advantage, there are also several challenges. Traditionally the measurement with the spectrometer is carried out in a controlled environment in a laboratory setting where the environmental variables such as temperature, lights and moisture level can be controlled, enabling consistent measurements. Due to the portable nature of the product, above mentioned environmental variables cannot be controlled. The fluctuation in environmental variables introduces fluctuation in a measurement. The fluctuation of measurement means that the classifier needs to be trained in a diverse sample of data, mimicking the actual use condition. Similarly, samples in the real world come from various sources with a various level of concentration. At present companies try to capture all the environmental as well as sample variation in a laboratory to produce training samples. However, there are several variations, and this takes a considerable amount of time to produce data to train a deep learning model. Similarly, due to regulatory restriction pharmaceutical materials are not readily available, restricting the pool of available samples to train a deep learning model. Furthermore, due to the nature of the manufacturing process, no two scanners are the same. So this means there will be slight variation in a measurement of the same sample from two different scanners. Therefore there is a need for robust model that can take various factors in consideration and correctly classify materials. 
 
 The primary business objective is to produce a robust model that can classify material from the measurement data produced from the portable spectrometer with reasonable accuracy despite all the challenges discussed above. The aim is also to reduce the data acquisition cost and time. To achieve this business goal, data augmentation with deep learning is deemed to be the suitable tool, as data augmentation has the potential to save both time and money in data collection and also improve the generalization ability of the model by increasing the diversity of samples. As mentioned above, there is a precedence of data augmentation being used in a similar situation with a successful result.  
 
@@ -26,10 +26,10 @@ The primary source of data analyzed in this thesis comes from the NIR spectromet
 \end{figure}
 
 
-As discussed above NIRs is used extensively in pharmaceutical industry to detect raw materials. Incidentally, pharmaceutical raw materials are also among the most heavily regulated materials, so there is limited sample available for training a neural network. As a result, pharmaceutical raw materials are ideal for testing effectiveness of data augmentation. The model built in the thesis will try to detect four different pharmaceutical raw materials. These four different pharmaceutical compounds will be called as variables '0',1','2','3' and '4' respectively. These variables are coded as a categorical variable with label '0','1','2','3' and '4'.
+As discussed above NIRs is used extensively in pharmaceutical industry to detect raw materials. Incidentally, pharmaceutical raw materials are also among the most heavily regulated materials, so there is limited sample available for training a neural network. As a result, pharmaceutical raw materials are ideal for testing effectiveness of data augmentation. The model built in the thesis will try to detect four different pharmaceutical raw materials. These four different pharmaceutical compounds will be called as variables '0',1','2','3' and '4' respectively. These variables are coded as a categorical variable with label '0','1','2','3' and '4'. The compound '0','1','2' and '3' are hard to acquire. Label '4' constitute the compounds that are readily available, and therefore this label is the majority class.
 
 \subsection{Exploratory Analysis}
-Pharmaceutical compounds '0', '1','2' and '3' are closely related to each other but are not the same compound. Whereas the compound '4' contains several different compounds that do not belong to any '0','1','2' and '3'. Essentially compound '4' comprise of compounds which  are unknown. The target variables are not 100 percent pure compound. The concentration of the target varies anywhere from 5 to 100 percent. Figure ~\ref{fig:variable concentration} shows the concentration count for all the compound.
+Pharmaceutical compounds '0', '1','2' and '3' are closely related to each other but are not the same compound. Whereas the compound '4' contains several different compounds that do not belong to any '0','1','2' and '3'. The target variables are not 100 percent pure compound. The concentration of the target varies anywhere from 5 to 100 percent. Figure ~\ref{fig:variable concentration} shows the concentration count for all the compound.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -40,8 +40,6 @@ Pharmaceutical compounds '0', '1','2' and '3' are closely related to each other 
 \end{figure}
 
 As we can see from the figure ~\ref{fig:variable concentration} concentration varies quite a lot. Most compounds have the concentration of 70 percent followed by the 10 percent. Not many compounds have the concentration level of 80 percent. The concentrations of unknown samples are unknown and therefore are not shown in the figure~\ref{fig:variable concentration}. The task of the classifier is to detect the compound regardless of the concentration. Given the spectral data, the classifier has to detect whether there is a presence of target compound or not irrespective of its concentration level. 
-
-The compound '0','1','2' and '3' are hard to acquire, and therefore the data is very imbalanced. Label '4' which represents the samples that do not belong to '0','1','2' and '3' are readily available, and therefore this label is the majority label or class.
 
 \section{Data preparation}
 
@@ -72,7 +70,7 @@ SMOTE was conceived to better handle the imbalance data-sets by oversampling the
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/smote_augment.png}
-		\caption{Augmentation using data warping}
+		\caption{Augmentation using SMOTE}
 		\label{fig:SMOTE augmentation}
 	\end{center}
 \end{figure}
@@ -87,7 +85,7 @@ To implement the GANs laid out in the literature review we make two deep learnin
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/GAN_architecture.png}
-		\caption{Augmentation using data warping}
+		\caption{The implementation of GAN in keras}
 		\label{fig:GAN architecture}
 	\end{center}
 \end{figure}
@@ -102,7 +100,7 @@ The first step of the training process is to draw random points from the normal 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/gan_augment.png}
-		\caption{Augmentation using data warping}
+		\caption{Augmentation using GANs}
 		\label{fig:GANs augmentation}
 	\end{center}
 \end{figure}
@@ -117,12 +115,14 @@ The model was trained for 30 epochs in mini-batches of 2000 samples. Epoch means
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{images/Convolution_model.png}
+		\includegraphics[width=\textwidth]{images/neural.png}
 		\caption{Model Architecture}
 		\label{fig:Convolution model}
 	\end{center}
 \end{figure}
 
 Picking the right network architecture is more of an art than a science-- \citep{chollet2017deep}. Having said that, there are some best practices and generally accepted conventions. The architecture of network proposed in the thesis is based on the best practices and generally agreed principles. For instance, categorical cross-entropy is used as the objective function of the model, as it is generally used for multi-class classification problems. Similarly, convolutional layers are followed by a max-pooling layer which is also a common practice in designing convolutional network. 
+
+Figure 4.7 gives the graphical overview of the network architecture, for full detail overview see \hyperref[fig:neural network architecture]{''Appendix C''}. The first layer simply reshapes the input data into a shape that is compatible with one dimensional convolution layer. Then three subsequent layers are convolution layers. In between each convolution layer there is a max-pooling layer. Max-pooling layer will perform down-sampling operation reducing the number of parameters and computation in the network. This helps to reduce over-fitting. Then the following fully connected layer will combines high level feature learned by convolution network and passes it to dense layer. The last two dense layer are connected through a dropout layer which randomly droops out (setting to zero) a number of output features of the layer during training. This operation is also done to avoid over-fitting. The last layer is a Dense layer that has a softmax activation function with 4 units, which is needed for this multi-class classification problem. This means that the resulting output will be array of length four for each input vector, the array contains the likelihood of the input vector belonging to each class.
 
 In summary, in the implementation chapter we have implemented various data augmentation techniques and generated artificial spectral data. Similarly we have also implemented convolutional neural network to classify pharmaceutical material. 

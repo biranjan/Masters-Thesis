@@ -4,33 +4,33 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Building block of deep learning process \relax }}{7}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Augmentation via data warping on hand written digits\relax }}{10}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Synthetic data generation using SMOTE\relax }}{12}{figure.caption.8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces GANs architecture\relax }}{14}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Building block of deep learning process \relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Augmentation via data warping\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Synthetic data generation using SMOTE\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces GANs architecture\relax }}{14}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces CRISP-DM process\relax }}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces CRISP-DM process\relax }}{20}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Spectral data\relax }}{26}{figure.caption.12}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Concentration level of compounds\relax }}{27}{figure.caption.13}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Augmentation using data warping\relax }}{29}{figure.caption.14}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Augmentation using data warping\relax }}{30}{figure.caption.15}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Augmentation using data warping\relax }}{31}{figure.caption.16}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Augmentation using data warping\relax }}{32}{figure.caption.17}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Model Architecture\relax }}{34}{figure.caption.18}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Spectral data\relax }}{26}{figure.caption.13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Concentration level of compounds\relax }}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Augmentation using data warping\relax }}{29}{figure.caption.15}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Augmentation using data warping\relax }}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Augmentation using data warping\relax }}{31}{figure.caption.17}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Augmentation using data warping\relax }}{32}{figure.caption.18}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Model Architecture\relax }}{34}{figure.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Data generation process using GANs\relax }}{51}{figure.caption.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Deep learning model without augmentation training process\relax }}{52}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {F.1}{\ignorespaces Training loss and accuracy for model with augmentation usign data-warping\relax }}{53}{figure.caption.26}
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Data generation process using GANs\relax }}{53}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {G.1}{\ignorespaces Training loss and accuracy for model with augmentation usign data-warping\relax }}{54}{figure.caption.27}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Deep learning model without augmentation training process\relax }}{54}{figure.caption.26}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {H.1}{\ignorespaces Density plot of model missclassification at various concentration level \relax }}{55}{figure.caption.28}
+\contentsline {figure}{\numberline {F.1}{\ignorespaces Training loss and accuracy for model with augmentation usign data-warping\relax }}{55}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {G.1}{\ignorespaces Training loss and accuracy for model with augmentation usign data-warping\relax }}{56}{figure.caption.28}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {H.1}{\ignorespaces Density plot of model missclassification at various concentration level \relax }}{57}{figure.caption.29}
