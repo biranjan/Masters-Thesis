@@ -7,6 +7,9 @@ Aalto Master's Thesis
 
 - Remember to check the school, degree programme, major, city (campus), ... etc in the main file as well as in `aalto-thesis.sty` to ensure that they match your situation.
 
+- See the **thesis.pdf** for the actual thesis
+
+
 ## Graphical Overview of key concepts described in thesis:
 
 - Deep Learning 
